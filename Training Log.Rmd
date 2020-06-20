@@ -1,0 +1,209 @@
+---
+title: "Training Week of 4/27"
+output:
+  word_document: default
+  html_document: default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+# Monday 
+
+Plan for 60 minutes of easy running. No looking at watch. Should run with Rowan. 
+
+### Miles Run and Average Pace 
+
+```{r}
+library(hms)
+miles_run1= 8.57
+print(miles_run1)
+time_running1=hms(0,60)
+converted_time_running=as.numeric(time_running1)
+dec_runningtime=converted_time_running/miles_run1
+time_in_minutes=(dec_runningtime)/60
+floored_minutes=floor(time_in_minutes)
+dec=time_in_minutes-trunc(time_in_minutes)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes))
+print(time_stored)
+```
+
+# Tuesday 
+
+Plan for 70 minutes of easy running. No looking at watch. Goal of 10 miles, but less is A-okay. 
+
+
+### Projected Miles Run and Average Pace 
+
+```{r}
+miles_run2=10
+print(miles_run2)
+time_running2=hms(0,10,1)
+converted_time_running=as.numeric(time_running2)
+dec_runningtime=converted_time_running/miles_run2
+time_in_minutes=(dec_runningtime)/60
+floored_minutes=floor(time_in_minutes)
+dec=time_in_minutes-trunc(time_in_minutes)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes))
+print(time_stored)
+```
+
+
+# Wednesday 
+
+Plan for 85 minutes of easy running.   
+
+### Projected Miles Run and Average Pace 
+```{r}
+miles_run3=12
+print(miles_run3)
+time_running3=hms(00,24,1)
+converted_time_running=as.numeric(time_running3)
+dec_runningtime=converted_time_running/miles_run3
+time_in_minutes=(dec_runningtime)/60
+floored_minutes=floor(time_in_minutes)
+dec=time_in_minutes-trunc(time_in_minutes)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes))
+print(time_stored)
+```
+
+
+# Thursday 
+
+70 minutes of easy running. 8*45/15 at Johnson's rock in the middle, with 6x hills after. 
+
+### Projected Miles Run and Average Pace 
+```{r}
+miles_run4=10
+print(miles_run4)
+time_running4=hms(00,10,1)
+converted_time_running=as.numeric(time_running4)
+dec_runningtime=converted_time_running/miles_run4
+time_in_minutes=(dec_runningtime)/60
+floored_minutes=floor(time_in_minutes)
+dec=time_in_minutes-trunc(time_in_minutes)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes))
+print(time_stored)
+```
+
+
+# Friday 
+
+70 minutes of easy running. 4x30 seconds on, 30 seconds off, at harder effort in the middle, or whenever there is some flat ground. 
+
+### Projected Miles Run and Average Pace 
+```{r}
+miles_run5=10
+print(miles_run5)
+time_running5=hms(00,10,1)
+converted_time_running=as.numeric(time_running5)
+dec_runningtime=converted_time_running/miles_run5
+time_in_minutes=(dec_runningtime)/60
+floored_minutes=floor(time_in_minutes)
+dec=time_in_minutes-trunc(time_in_minutes)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes))
+print(time_stored)
+```  
+# Saturday 
+
+10 day after the last workout, so it's time to give the body a little hit again. Plan for 6 mile tempo at 5:20 pace at Johnson's rock. Total time: 32 minutes. The body should be able to handle this following last week's 8*3 on, 1 off fartlek. Let's get it. 
+
+15 minute warmup, workout in 32 minutes, and 20 minute cooldown. 
+
+### Projected Miles Run and Average Pace 
+```{r}
+miles_run6=10.6
+print(miles_run6)
+time_running6=hms(00,7,1)
+converted_time_running=as.numeric(time_running6)
+dec_runningtime=converted_time_running/miles_run6
+time_in_minutes=(dec_runningtime)/60
+floored_minutes=floor(time_in_minutes)
+dec=time_in_minutes-trunc(time_in_minutes)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes))
+print(time_stored)
+```
+
+
+
+
+# Sunday 
+
+Easy long run. 16 miles in 1:50 or so. Keep the aerobic stimulus up, but in a smart way. 
+
+### Projected Miles Run and Average Pace 
+```{r}
+miles_run7=16
+print(miles_run7)
+time_running7=hms(0,52,1)
+converted_time_running=as.numeric(time_running7)
+dec_runningtime=converted_time_running/miles_run7
+time_in_minutes=(dec_runningtime)/60
+floored_minutes=floor(time_in_minutes)
+dec=time_in_minutes-trunc(time_in_minutes)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes))
+print(time_stored)
+```
+
+
+
+
+# Total Miles for the Week 
+
+
+```{r}
+miles_total=data.frame(miles_run1, miles_run2,miles_run3,miles_run4, miles_run5,miles_run6,miles_run7)
+new_variable=sum((miles_total))
+print(new_variable)
+```
+
+# Total Time for the Week 
+```{r}
+hours_run=as.numeric(time_running1+time_running2+time_running3+time_running4+time_running5+time_running6+time_running7)
+converted_hours=hours_run/3600
+floored_hours=floor(converted_hours)
+converted_minutes=converted_hours-trunc(converted_hours)
+dec_minutes=converted_minutes*60
+print(hms(0,dec_minutes,floored_hours))
+```
+
+# Average Pace for the Week 
+
+```{r}
+#need to get the total miles run for the week 
+miles_total=data.frame(miles_run1, miles_run2,miles_run3,miles_run4, miles_run5,miles_run6,miles_run7)
+total_miles=sum((miles_total))
+
+#need to get the total minutes for the week 
+hours_run=as.numeric(time_running1+time_running2+time_running3+time_running4+time_running5+time_running6+time_running7)
+into_minutes=hours_run/60
+
+#need to divide the total minutes for the week by the total miles for the week 
+
+minutes_per_mile=into_minutes/total_miles
+
+#need to floor the minutes and seconds 
+
+floored_minutes_total=floor(minutes_per_mile)
+dec=minutes_per_mile-trunc(minutes_per_mile)
+time_in_seconds=dec*60
+time_stored=(hms(time_in_seconds,floored_minutes_total))
+
+print(time_stored)
+```
+
+
+
+
