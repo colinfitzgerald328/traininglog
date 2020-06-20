@@ -6,6 +6,8 @@ output:
 ---
 
 
+# This is a program I wrote for myself. I input the total time I ran along with the distance I ran for each day of the week and the program prints the average pace for the run. In addition, it will print the average pace for the week, the total time I ran for the week, and the total number of miles run for the week. 
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
